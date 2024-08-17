@@ -49,6 +49,7 @@ export default {
                     <th scope="col" class="text-center">Data</th>
                     <th scope="col" class="text-center">N. Tappe</th>
                     <th scope="col" class="text-center">Completato</th>
+                    <th scope="col" class="text-center"></th>
                 </tr>
             </thead>
             <tbody>
@@ -62,6 +63,7 @@ export default {
                         <i v-else class="fa-solid fa-circle-xmark" style="color: red;"></i>
                         </button>
                     </td>
+                    <td class="text-center"><router-link :to="{name: 'Giornate'}" class="btn btn-outline-warning">Dettagli</router-link></td>
                 </tr>
             </tbody>
         </table>
