@@ -10,6 +10,7 @@ export const store = reactive({
         {
             giorno: 1,
             data: "2024-09-01",
+            completato: false,
             tappe: [
                 {
                     titolo: "Arrivo a Roma",
@@ -24,6 +25,7 @@ export const store = reactive({
         {
             giorno: 2,
             data: "2024-09-02",
+            completato: false,
             tappe: [
                 {
                     titolo: "Visita al Colosseo",
@@ -46,6 +48,7 @@ export const store = reactive({
         {
             giorno: 3,
             data: "2024-09-03",
+            completato: false,
             tappe: [
                 {
                     titolo: "Vaticano e Cappella Sistina",
@@ -68,6 +71,7 @@ export const store = reactive({
         {
             giorno: 4,
             data: "2024-09-04",
+            completato: false,
             tappe: [
                 {
                     titolo: "Gita a Firenze",
@@ -90,6 +94,7 @@ export const store = reactive({
         {
             giorno: 5,
             data: "2024-09-05",
+            completato: false,
             tappe: [
                 {
                     titolo: "Ritorno a Roma e Villa Borghese",
