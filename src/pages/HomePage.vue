@@ -9,6 +9,7 @@ export default {
     },
 
     methods: {
+
         changeStatus: function(giorno){
 
         // Trovo il giorno da aggiornare
@@ -23,7 +24,16 @@ export default {
         //Salvo nel localstorage il file json
         localStorage.setItem("viaggio", jsonViaggio)
 
+        },
+
+        deleteDay: function(giorno){
+            store.viaggio.splice(giorno-1, 1)
+
+            // Trasformo in json e lo salvo nel localstorage
+            const jsonViaggio = JSON.stringify(store.viaggio);
+            localStorage.setItem("viaggio", jsonViaggio)
         }
+
     },
 
     created(){
@@ -50,6 +60,8 @@ export default {
                     <th scope="col" class="text-center">N. Tappe</th>
                     <th scope="col" class="text-center">Completato</th>
                     <th scope="col" class="text-center"></th>
+                    <th scope="col" class="text-center"></th>
+
                 </tr>
             </thead>
             <tbody>
@@ -64,6 +76,7 @@ export default {
                         </button>
                     </td>
                     <td class="text-center"><router-link :to="{name: 'Giornate'}" class="btn btn-outline-warning">Dettagli</router-link></td>
+                    <td><button @click="deleteDay(item.giorno)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button></td>
                 </tr>
             </tbody>
         </table>
