@@ -93,9 +93,9 @@ export default {
                     <td class="text-center">{{ item.tappe ? item.tappe.length : "Non definito" }}</td>
 
                     <td class="text-center">
-                        <button class="btn" @click="changeStatus(item.giorno)">
-                            <i v-if="item.completato" class="fa-solid fa-circle-check" style="color: green;"></i>
-                            <i v-else class="fa-solid fa-circle-xmark" style="color: red;"></i>
+                        <button class="btn border-0" @click="changeStatus(item.giorno)">
+                            <i v-if="item.completato" class="fa-solid fa-circle-check fs-5" style="color: green;"></i>
+                            <i v-else class="fa-solid fa-circle-xmark fs-5" style="color: red;"></i>
                         </button>
                     </td>
 
@@ -104,7 +104,7 @@ export default {
 
                     <td>
                         <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteDay">
-                            
+
                             <i class="fa-solid fa-trash"></i>
 
                             <!-- Delete Modal -->
