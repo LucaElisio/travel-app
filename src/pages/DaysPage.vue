@@ -43,12 +43,19 @@ export default {
 
     <div class="container" v-for="item in store.viaggio">
 
-        <div class="d-flex">
-            <h3>Giorno {{ item.giorno }}</h3>
-            <button class="btn" @click="changeStatus(item.giorno)">
-                <i v-if="item.completato" class="fa-solid fa-circle-check" style="color: green;"></i>
-                <i v-else class="fa-solid fa-circle-xmark" style="color: red;"></i>
-            </button>
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex">
+                <h3>Giorno {{ item.giorno }}</h3>
+                <button class="btn border-0" @click="changeStatus(item.giorno)">
+                    <i v-if="item.completato" class="fa-solid fa-circle-check fs-5" style="color: green;"></i>
+                    <i v-else class="fa-solid fa-circle-xmark fs-5" style="color: red;"></i>
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-warning modify-btn">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+            </div>
         </div>
 
         <h6>Data: {{ item.data }}</h6>
@@ -69,4 +76,18 @@ export default {
 
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+
+.modify-btn{
+
+    font-size: 0.9rem;
+    background-color: orange;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+</style>
