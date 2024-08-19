@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "./pages/HomePage.vue";
 import DaysPage from "./pages/DaysPage.vue";
 import BagPage from "./pages/BagPage.vue";
+import NewStage from "./pages/NewStage.vue";
 
 
 export const router = createRouter ({
@@ -22,6 +23,11 @@ export const router = createRouter ({
             path: "/bag",
             name: "Borsa",
             component: BagPage
+        },
+        {
+            path: "/newstage",
+            name: "NuovaTappa",
+            component: NewStage
         }
     ]
 })
