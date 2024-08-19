@@ -32,6 +32,18 @@ export default {
             //Salvo nel localstorage il file json
             localStorage.setItem("viaggio", jsonViaggio)
 
+        },
+
+        saveDay: function (giorno) {
+
+            store.selectedDay = giorno;
+
+            //Trasformo in json l'array viaggio
+            const jsonViaggio = JSON.stringify(store.viaggio);
+
+            //Salvo nel localstorage il file json
+            localStorage.setItem("viaggio", jsonViaggio)
+
         }
     }
 }
@@ -52,22 +64,26 @@ export default {
                 </button>
             </div>
             <div>
-                <button class="btn btn-warning modify-btn">
+                <router-link :to="{ name: 'NuovaTappa' }" @click="saveDay(item.giorno)"
+                    class="btn btn-warning modify-btn">
                     <i class="fa-solid fa-pen"></i>
-                </button>
+                </router-link>
             </div>
         </div>
 
         <h6>Data: {{ item.data }}</h6>
 
         <ul>
-            <li v-for="tappa in item.tappe">
+            <li v-for="tappa in item.tappe" class="mb-5">
                 <strong>{{ tappa.titolo }}</strong>
-                <ul>
-                    <li>Descrizione: {{ tappa.descrizione }} </li>
-                    <li>Cibo: {{ tappa.cibo }}</li>
-                    <li>Curiosità: {{ tappa.curiosità }}</li>
-                    <li>Note: {{ tappa.note }}</li>
+                <ul class="d-flex">
+                    <div class="col-8">
+                        <li>Descrizione: {{ tappa.descrizione }} </li>
+                        <li>Cibo: {{ tappa.cibo }}</li>
+                        <li>Curiosità: {{ tappa.curiosità }}</li>
+                        <li>Note: {{ tappa.note }}</li>
+                    </div>
+                    <div class="col-3 img" :style="{ backgroundImage: 'url(' + tappa.immagine + ')' }"></div>
                 </ul>
             </li>
         </ul>
@@ -77,8 +93,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
-
-.modify-btn{
+.modify-btn {
 
     font-size: 0.9rem;
     background-color: orange;
@@ -88,6 +103,13 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 </style>
